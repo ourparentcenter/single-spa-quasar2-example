@@ -1,0 +1,38 @@
+<single-spa-router mode="history" base="/">
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <main>
+    <nav>
+      <a href="/" onclick="singleSpaNavigate(event)">Default</a>
+      |
+      <a href="/app" onclick="singleSpaNavigate(event)">vue-3-app</a>
+      |
+      <a href="/app2" onclick="singleSpaNavigate(event)">vue-3-app2</a>
+    </nav>
+    <route default>
+      <application name="@single-spa/welcome"></application>
+    </route>
+    <route path="app">
+      <application name="@opc/application"></application>
+    </route>
+    <route path="app2">
+      <application name="@opc/helloworld"></application>
+    </route>
+  </main>
+</single-spa-router>
