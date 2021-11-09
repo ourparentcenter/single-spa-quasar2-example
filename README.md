@@ -41,7 +41,7 @@ export const unmount = vueLifecycles.unmount;
 
 To get the router, we use .quasar/app.js to partially create the app with quasar and grab the router instance. We then use the router instance in the vue createApp to have proper routing.
 
-The webpak config in quasar.conf.js:
+The webpack config in quasar.conf.js:
 ```js
 chainWebpack (chain) {
   chain.entry('app').add(resolve('src', 'single-spa-entry.js')) // This is the magic to make quasar work with single-spa
@@ -85,6 +85,6 @@ extendWebpack (cfg) {
 }
 ```
 
-Webpack string-replace-loader is used to comment our the start(app, boot) method in .quasar/client-entry.js so that single-spa is the framework that mounts the app. Without this 2 instances of quasar would be created with one failing due to missing q-app div to mount to.
+Webpack string-replace-loader is used to comment our the start(app, boot) method in .quasar/client-entry.js so that single-spa is the framework that mounts the app. Without this, 2 instances of quasar would be created with one failing due to missing q-app div to mount to.
 ### Still to do:
 - Fix routing betwenn apps
