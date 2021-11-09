@@ -37,6 +37,8 @@
           v-bind="link"
         />
         <hr>
+        <a href="/" onclick="singleSpaNavigate(event)">Default</a>
+        <hr>
         <router-link to="/">Go to Home Page</router-link>
         <hr>
         <router-link to="/test">Go to Test Page</router-link>

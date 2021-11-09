@@ -65,7 +65,8 @@ module.exports = configure(function (ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      vueRouterBase: '/app/',
+      // appBase: '/app',
+      vueRouterBase: '/app',
       vueRouterMode: 'history', // available values: 'hash', 'history'
       scopeHoisting: true,
 
@@ -96,11 +97,11 @@ module.exports = configure(function (ctx) {
           // library: `${name}-[name]`,
           libraryTarget: 'system',
           chunkLoadingGlobal: `webpackJsonp_${name}`,
-          publicPath: '/'
+          publicPath: ''
         }
         cfg.externals = [ // [OPTIONAL] Dependencies that will be provided by the container
           'single-spa',
-          // 'quasar',
+          'quasar',
           // '@quasar/extras',
           // 'vue',
           // 'vue-router',
@@ -118,6 +119,15 @@ module.exports = configure(function (ctx) {
           exclude: /node_modules/,
           options: { formatter: require('eslint').CLIEngine.getFormatter('stylish') }
         })
+        cfg.module.rules.push(
+          {
+            test: /\.js$/,
+            loader: 'string-replace-loader',
+            options: {
+              search: 'start(app, boot)',
+              replace: '//start(app, boot)',
+            }
+        })
       }
     },
 
@@ -129,7 +139,7 @@ module.exports = configure(function (ctx) {
       headers: {
         'Access-Control-Allow-Origin': '*'
       },
-      // allowedHosts: ['single-spa-playground.org']
+      allowedHosts: ['single-spa-playground.org']
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
