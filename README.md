@@ -1,4 +1,7 @@
-# single-spa-quasar2-example
+# Updated demo example
+I have a better demo using 3 quasar apps here https://github.com/ourparentcenter/micro-quasar
+
+## single-spa-quasar2-example
 Example repo for single-spa and quasar2
 
 ## To run
