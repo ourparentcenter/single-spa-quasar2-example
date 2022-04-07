@@ -1,5 +1,5 @@
 # Updated demo example
-I have a better demo using 3 quasar apps here https://github.com/ourparentcenter/micro-quasar
+I have a better demo using 3 quasar apps [here](https://github.com/ourparentcenter/micro-quasar/tree/v2) on the v2 branch. It has Pinia, boot files, browser module import, etc and is a complete rewrite of this demo.
 
 ## single-spa-quasar2-example
 Example repo for single-spa and quasar2
